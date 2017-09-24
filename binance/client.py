@@ -19,7 +19,8 @@ class Client(object):
 
     API_URL = 'https://www.binance.com/api'
     WEBSITE_URL = 'https://www.binance.com'
-    API_VERSION = 'v3'
+    PUBLIC_API_VERSION = 'v1'
+    PRIVATE_API_VERSION = 'v3'
 
     _products = None
 
@@ -49,8 +50,9 @@ class Client(object):
                                 'X-MBX-APIKEY': self.API_KEY})
         return session
 
-    def _create_api_uri(self, path):
-        return self.API_URL + '/' + self.API_VERSION + '/' + path
+    def _create_api_uri(self, path, signed=True):
+        v = self.PRIVATE_API_VERSION if signed else self.PUBLIC_API_VERSION
+        return self.API_URL + '/' + v + '/' + path
 
     def _create_website_uri(self, path):
         return self.WEBSITE_URL + '/' + path
@@ -63,7 +65,7 @@ class Client(object):
 
     def _request(self, method, path, signed, **kwargs):
 
-        uri = self._create_api_uri(path)
+        uri = self._create_api_uri(path, signed)
 
         data = kwargs.get('data', None)
         if data and isinstance(data, dict):
