@@ -212,7 +212,7 @@ class Client(object):
             if key == 'signature':
                 has_signature = True
             else:
-                params.append((key, value))
+                params.append((key, str(value)))
         # sort parameters by key
         params.sort(key=itemgetter(0))
         if has_signature:
