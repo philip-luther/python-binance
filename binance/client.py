@@ -5972,7 +5972,7 @@ class Client(object):
     # Quoting interface endpoints
 
     def options_ping(self):
-        """Test connectivity to the REST API
+        """Test connectivity
 
         https://binance-docs.github.io/apidocs/voptions/en/#test-connectivity
 
