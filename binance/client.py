@@ -2605,7 +2605,7 @@ class Client(object):
         """
         result = self._request_margin_api('get', 'capital/withdraw/history', True, data=params)
 
-        for entry in result['withdrawList']:
+        for entry in result:
             if 'id' in entry and entry['id'] == withdraw_id:
                 return entry
         
