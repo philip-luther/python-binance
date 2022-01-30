@@ -862,7 +862,7 @@ class Client(object):
 	:param spot: Historical klines from spot endpoint, otherwise futures
         :type spot: bool
 
-        :return: list of OHLCV values
+        :return: list of OHLCV values (Open time, Open, High, Low, Close, Volume, Close time, Quote asset volume, Number of trades, Taker buy base asset volume, Taker buy quote asset volume, Ignore)
 
         """
         return self._historical_klines(symbol, interval, start_str, end_str=None, limit=500, spot=spot)
@@ -890,7 +890,7 @@ class Client(object):
         :param spot: Historical klines from spot endpoint, otherwise futures
         :type spot: bool
 
-        :return: list of OHLCV values
+        :return: list of OHLCV values (Open time, Open, High, Low, Close, Volume, Close time, Quote asset volume, Number of trades, Taker buy base asset volume, Taker buy quote asset volume, Ignore)
 
         """
         # init our list
@@ -5305,7 +5305,7 @@ class Client(object):
         :param limit: Default 500; max 1000.
         :type limit: int
 
-        :return: list of OHLCV values
+        :return: list of OHLCV values (Open time, Open, High, Low, Close, Volume, Close time, Quote asset volume, Number of trades, Taker buy base asset volume, Taker buy quote asset volume, Ignore)
 
         """
         return self._historical_klines(symbol, interval, start_str, end_str=None, limit=500, spot=False)
