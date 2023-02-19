@@ -2449,13 +2449,13 @@ class Client(object):
             raise BinanceWithdrawException(res['msg'])
         return res
 
-    def get_staking_balance(self, **params):
+    def get_us_staking_balance(self, **params):
         """Get staking balance
 
         https://docs.binance.us/#get-staking-balance
 
         """
-
+        assert self.tld == "us", "Endpoint only available on binance.us"
         return self._request_margin_api("get", "staking/stakingBalance", True, data=params)
 
     # Withdraw Endpoints
