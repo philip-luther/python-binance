@@ -5623,6 +5623,14 @@ class Client(object):
 
         """
         return self._request_futures_api('post', 'order', True, data=params)
+    
+    def futures_modify_order(self, **params):
+        """Modify an existing order. Currently only LIMIT order modification is supported.
+
+        https://binance-docs.github.io/apidocs/futures/en/#modify-order-trade
+
+        """
+        return self._request_futures_api('put', 'order', True, data=params)
 
     def futures_place_batch_order(self, **params):
         """Send in new orders.
