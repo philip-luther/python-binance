@@ -7,3 +7,4 @@ python-coveralls
 requests-mock
 tox
 setuptools
+aioresponses
