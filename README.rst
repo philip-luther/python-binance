@@ -67,6 +67,7 @@ Features
 - Margin Trading
 - Futures Trading
 - Vanilla Options
+- Proxy support
 - Support other domains (.us, .jp, etc)
 
 Quick Start
