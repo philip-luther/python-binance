@@ -38,6 +38,9 @@ If you came here looking for the `Binance exchange <https://www.binance.com/?ref
 
 If you're interested in Binance's new DEX Binance Chain see my `python-binance-chain library <https://github.com/sammchardy/python-binance-chain>`_
 
+*Please make sure your* `python-binance` *version is* **v.1.0.20** *or higher.*
+*The previous versions are no longer recommended because some endpoints have been deprecated.*
+
 Source code
   https://github.com/sammchardy/python-binance
 
